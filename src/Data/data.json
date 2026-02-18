@@ -1,0 +1,63 @@
+[
+  {
+    "id": "python",
+    "title": "Complete Python Development Bootcamp",
+    "duration": "6 Months",
+    "level": "Beginner to Advanced",
+    "description": "Master Python from basics to advanced concepts including real-world projects and resume building.",
+    "modules": [
+      {
+        "title": "Module 1: Basics & Fundamentals",
+        "topics": ["Variables", "Loops", "Functions", "OOP Basics"]
+      },
+      {
+        "title": "Module 2: Libraries & Frameworks",
+        "topics": ["NumPy", "Pandas", "Matplotlib", "Flask"]
+      },
+      {
+        "title": "Module 3: Advanced Python",
+        "topics": ["Decorators", "Generators", "Multithreading", "Async"]
+      },
+      {
+        "title": "Module 4: Resume & Company Preparation",
+        "topics": ["Resume Building", "Interview Questions", "Mock Interviews", "Portfolio Projects"]
+      }
+    ]
+  },
+
+  {
+    "id": "react",
+    "title": "React Frontend Mastery",
+    "duration": "4 Months",
+    "level": "Intermediate",
+    "description": "Build modern frontend apps with React and advanced hooks.",
+    "modules": [
+      { "title": "Module 1: React Basics", "topics": ["JSX", "Components", "Props", "State"] },
+      { "title": "Module 2: Hooks", "topics": ["useState", "useEffect", "useContext"] },
+      { "title": "Module 3: Routing & Redux", "topics": ["React Router", "Redux Toolkit"] },
+      { "title": "Module 4: Production Deploy", "topics": ["Vercel", "Netlify", "SEO"] }
+    ]
+  },
+
+  {
+    "id": "node",
+    "title": "Node.js Backend Engineering",
+    "duration": "5 Months",
+    "level": "Beginner to Advanced",
+    "description": "Build scalable backend APIs with Node, Express, and MongoDB.",
+    "modules": [
+      { "title": "Module 1: Node Basics", "topics": ["Event Loop", "Modules"] },
+      { "title": "Module 2: Express", "topics": ["Routes", "Middleware"] },
+      { "title": "Module 3: MongoDB", "topics": ["Schemas", "Aggregation"] },
+      { "title": "Module 4: Auth & JWT", "topics": ["Authentication", "Security"] }
+    ]
+  },
+
+  { "id": "java", "title": "Java Programming", "duration": "6 Months", "level": "Beginner", "description": "Core Java + Spring Boot", "modules": [] },
+  { "id": "csharp", "title": "C# & .NET Development", "duration": "5 Months", "level": "Intermediate", "description": ".NET Core & APIs", "modules": [] },
+  { "id": "fullstack", "title": "Full Stack MERN", "duration": "8 Months", "level": "Advanced", "description": "Complete MERN Stack", "modules": [] },
+  { "id": "datascience", "title": "Data Science Bootcamp", "duration": "7 Months", "level": "Advanced", "description": "ML + AI Projects", "modules": [] },
+  { "id": "devops", "title": "DevOps Engineering", "duration": "6 Months", "level": "Advanced", "description": "CI/CD + Docker + AWS", "modules": [] },
+  { "id": "ai", "title": "Artificial Intelligence", "duration": "9 Months", "level": "Advanced", "description": "Deep Learning + NLP", "modules": [] },
+  { "id": "uiux", "title": "UI/UX Design Mastery", "duration": "4 Months", "level": "Beginner", "description": "Figma + UX Research", "modules": [] }
+]
