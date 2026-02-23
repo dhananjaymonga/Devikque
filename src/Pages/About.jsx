@@ -241,7 +241,7 @@ function Hero() {
           </h1>
           <div style={{
             fontFamily: "var(--sans)", fontSize: "clamp(18px, 3vw, 36px)",
-            fontWeight: 100, fontStyle: "italic", color: "#333",
+            fontWeight: 100, fontStyle: "italic", color: "#555",
             letterSpacing: "0.05em", marginTop: 8,
             animation: "fadeUp 0.7s 0.6s ease both", opacity: 0,
             animationFillMode: "forwards",
@@ -252,7 +252,7 @@ function Hero() {
 
         {/* desc */}
         <p style={{
-          fontFamily: "var(--mono)", fontSize: 14, color: "#444",
+          fontFamily: "var(--mono)", fontSize: 14, color: "#888",
           lineHeight: 1.9, maxWidth: 580, marginBottom: 56,
           letterSpacing: "0.02em",
           animation: "fadeUp 0.7s 0.8s ease both", opacity: 0,
@@ -284,14 +284,14 @@ function Hero() {
           </button>
           <button style={{
             padding: "14px 32px", borderRadius: 6,
-            background: "transparent", color: "#333",
+            background: "transparent", color: "#888",
             border: "1px solid #1a1a1a",
             fontFamily: "var(--sans)", fontSize: 13, fontWeight: 600,
             cursor: "pointer", letterSpacing: "0.12em", textTransform: "uppercase",
             transition: "all 0.25s ease",
           }}
-          onMouseEnter={e => { e.currentTarget.style.color = "#ccc"; e.currentTarget.style.borderColor = "#333"; }}
-          onMouseLeave={e => { e.currentTarget.style.color = "#333"; e.currentTarget.style.borderColor = "#1a1a1a"; }}
+          onMouseEnter={e => { e.currentTarget.style.color = "#ccc"; e.currentTarget.style.borderColor = "#888"; }}
+          onMouseLeave={e => { e.currentTarget.style.color = "#888"; e.currentTarget.style.borderColor = "#1a1a1a"; }}
           >
             GET IN TOUCH
           </button>
@@ -352,7 +352,7 @@ function Marquee() {
             fontFamily: item === "◆" ? "var(--mono)" : "var(--sans)",
             fontSize: item === "◆" ? 10 : 13,
             fontWeight: 700, letterSpacing: "0.18em",
-            color: item === "◆" ? "#00ff88" : "#2a2a2a",
+            color: item === "◆" ? "#00ff88" : "#888",
             whiteSpace: "nowrap", textTransform: "uppercase",
           }}>
             {item}
@@ -410,7 +410,7 @@ function StatItem({ s, inView, i }) {
         {count}{s.suffix}
       </div>
       <div style={{
-        fontFamily: "var(--mono)", fontSize: 10, color: "#2a2a2a",
+        fontFamily: "var(--mono)", fontSize: 10, color: "#888",
         letterSpacing: "0.15em", marginTop: 12, textTransform: "uppercase",
       }}>
         {s.label}
@@ -444,7 +444,7 @@ function AboutStory() {
               lineHeight: 1.05, textTransform: "uppercase", marginTop: 24, marginBottom: 28,
             }}>
               Built by devs.<br />
-              <span style={{ fontWeight: 100, fontStyle: "italic", color: "#333" }}>
+              <span style={{ fontWeight: 100, fontStyle: "italic", color: "#888" }}>
                 For the world.
               </span>
             </h2>
@@ -457,7 +457,7 @@ function AboutStory() {
               struggle to find trustworthy tech partners.
             </p>
             <p style={{
-              fontFamily: "var(--sans)", fontSize: 15, color: "#333",
+              fontFamily: "var(--sans)", fontSize: 15, color: "#888",
               lineHeight: 1.9, fontWeight: 300, letterSpacing: "0.02em",
             }}>
               So we built something different: a tech company that trains the next generation
@@ -488,7 +488,7 @@ function AboutStory() {
                     {year}
                   </div>
                   <div style={{
-                    fontFamily: "var(--sans)", fontSize: 13, color: "#3a3a3a",
+                    fontFamily: "var(--sans)", fontSize: 13, color: "#888",
                     fontWeight: 300, letterSpacing: "0.03em",
                   }}>
                     {text}
@@ -662,7 +662,7 @@ function Services() {
             </h2>
           </div>
           <p style={{
-            fontFamily: "var(--mono)", fontSize: 12, color: "#333",
+            fontFamily: "var(--mono)", fontSize: 12, color: "#888",
             maxWidth: 280, lineHeight: 1.8, letterSpacing: "0.04em",
           }}>
             End-to-end solutions — from a single landing page to a full enterprise suite.
@@ -738,7 +738,7 @@ function ServiceCard({ s, i, inView, hovered, onHover, onLeave }) {
       </h3>
 
       <p style={{
-        fontFamily: "var(--sans)", fontSize: 13, color: "#2e2e2e",
+        fontFamily: "var(--sans)", fontSize: 13, color: "#888",
         lineHeight: 1.8, fontWeight: 300, letterSpacing: "0.02em", marginBottom: 20,
       }}>
         {s.desc}
@@ -797,12 +797,12 @@ function Training() {
               lineHeight: 1.05, textTransform: "uppercase", marginTop: 24, marginBottom: 20,
             }}>
               Learn from<br />
-              <span style={{ fontWeight: 100, fontStyle: "italic", color: "#333" }}>
+              <span style={{ fontWeight: 100, fontStyle: "italic", color: "#888" }}>
                 real engineers
               </span>
             </h2>
             <p style={{
-              fontFamily: "var(--sans)", fontSize: 14, color: "#3a3a3a",
+              fontFamily: "var(--sans)", fontSize: 14, color: "#888",
               lineHeight: 1.85, fontWeight: 300, marginBottom: 32, letterSpacing: "0.02em",
             }}>
               Our classroom-based training programs are designed for students who want
@@ -821,7 +821,7 @@ function Training() {
               <div key={text} style={{
                 display: "flex", alignItems: "center", gap: 12,
                 marginBottom: 14, fontFamily: "var(--sans)",
-                fontSize: 13, color: "#2a2a2a", fontWeight: 300,
+                fontSize: 13, color: "#888", fontWeight: 300,
                 letterSpacing: "0.03em",
               }}>
                 <span style={{ fontSize: 16 }}>{icon}</span>
@@ -877,7 +877,7 @@ function CourseRow({ c, i, inView }) {
         <div>
           <div style={{
             fontFamily: "var(--sans)", fontSize: 15, fontWeight: 700,
-            color: hover ? "var(--text)" : "#3a3a3a",
+            color: hover ? "var(--text)" : "#888",
             textTransform: "uppercase", letterSpacing: "0.04em",
             transition: "color 0.25s ease",
           }}>
@@ -936,12 +936,12 @@ function Internship() {
             lineHeight: 1, textTransform: "uppercase", marginTop: 20,
           }}>
             Work on<br />
-            <span style={{ fontWeight: 100, fontStyle: "italic", color: "#333" }}>
+            <span style={{ fontWeight: 100, fontStyle: "italic", color: "#888" }}>
               real projects
             </span>
           </h2>
           <p style={{
-            fontFamily: "var(--mono)", fontSize: 13, color: "#333",
+            fontFamily: "var(--mono)", fontSize: 13, color: "#888",
             maxWidth: 500, margin: "20px auto 0", lineHeight: 1.8, letterSpacing: "0.04em",
           }}>
             No fake todo apps. No tutorial projects. Real client work,
@@ -953,44 +953,6 @@ function Internship() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 1 }}>
           {INTERN_STEPS.map((step, i) => (
             <InternStep key={i} step={step} i={i} inView={inView} />
-          ))}
-        </div>
-
-        {/* bottom perks row */}
-        <div style={{
-          marginTop: 48,
-          display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 16,
-          opacity: inView ? 1 : 0,
-          transition: "opacity 0.8s 0.4s ease",
-        }}>
-          {[
-            ["💰", "Stipend Provided", "Performance-based monthly stipend"],
-            ["🏆", "Certificate", "Industry-recognized completion cert"],
-            ["👥", "1:1 Mentorship", "Dedicated senior engineer guide"],
-            ["🔗", "Placement Help", "Job referrals and resume support"],
-          ].map(([icon, title, desc]) => (
-            <div key={title} style={{
-              padding: "24px 20px",
-              background: "#050505",
-              border: "1px solid #0f0f0f",
-              borderRadius: 10, textAlign: "center",
-            }}>
-              <div style={{ fontSize: 28, marginBottom: 12 }}>{icon}</div>
-              <div style={{
-                fontFamily: "var(--sans)", fontSize: 13, fontWeight: 700,
-                color: "#2a2a2a", textTransform: "uppercase", letterSpacing: "0.06em",
-                marginBottom: 8,
-              }}>
-                {title}
-              </div>
-              <div style={{
-                fontFamily: "var(--mono)", fontSize: 10, color: "#1a1a1a",
-                lineHeight: 1.6, letterSpacing: "0.04em",
-              }}>
-                {desc}
-              </div>
-            </div>
           ))}
         </div>
       </div>
@@ -1018,7 +980,7 @@ function InternStep({ step, i, inView }) {
     >
       <div style={{
         fontFamily: "var(--mono)", fontSize: 32, fontWeight: 700,
-        color: hover ? step.color : "#141414",
+        color: hover ? step.color : "#888",
         letterSpacing: "-0.02em", marginBottom: 20,
         transition: "color 0.3s ease",
         lineHeight: 1,
@@ -1027,15 +989,16 @@ function InternStep({ step, i, inView }) {
       </div>
       <h4 style={{
         fontFamily: "var(--sans)", fontSize: 14, fontWeight: 700,
-        color: hover ? "var(--text)" : "#2a2a2a",
+        color: hover ? "var(--text)" : "#888",
         textTransform: "uppercase", letterSpacing: "0.06em",
         marginBottom: 12, transition: "color 0.3s ease",
       }}>
         {step.title}
       </h4>
       <p style={{
-        fontFamily: "var(--sans)", fontSize: 12, color: "#1e1e1e",
+        fontFamily: "var(--sans)", fontSize: 12, color: "#666",
         lineHeight: 1.7, fontWeight: 300, letterSpacing: "0.02em",
+        color: hover ? "var(--text)" : "#888",
       }}>
         {step.desc}
       </p>
@@ -1092,14 +1055,14 @@ function CTA() {
           }}>
             Ready to<br />
             <span style={{ color: "#00ff88" }}>build</span>{" "}
-            <span style={{ fontWeight: 100, fontStyle: "italic", color: "#333" }}>
+            <span style={{ fontWeight: 100, fontStyle: "italic", color: "#888" }}>
               something
             </span>
             <br />
             great?
           </h2>
           <p style={{
-            fontFamily: "var(--mono)", fontSize: 13, color: "#333",
+            fontFamily: "var(--mono)", fontSize: 13, color: "#888",
             lineHeight: 1.85, maxWidth: 440, margin: "0 auto 48px",
             letterSpacing: "0.04em",
           }}>
@@ -1123,35 +1086,18 @@ function CTA() {
             </button>
             <button style={{
               padding: "16px 36px", borderRadius: 6,
-              background: "transparent", color: "#333",
+              background: "transparent", color: "#888",
               border: "1px solid #1a1a1a",
               fontFamily: "var(--sans)", fontSize: 13, fontWeight: 600,
               cursor: "pointer", letterSpacing: "0.12em", textTransform: "uppercase",
               transition: "all 0.25s ease",
             }}
-            onMouseEnter={e => { e.currentTarget.style.color = "#ccc"; e.currentTarget.style.borderColor = "#333"; }}
-            onMouseLeave={e => { e.currentTarget.style.color = "#333"; e.currentTarget.style.borderColor = "#1a1a1a"; }}
+            onMouseEnter={e => { e.currentTarget.style.color = "#ccc"; e.currentTarget.style.borderColor = "#888"; }}
+            onMouseLeave={e => { e.currentTarget.style.color = "#888"; e.currentTarget.style.borderColor = "#1a1a1a"; }}
             >
               JOIN AS INTERN
             </button>
           </div>
-        </div>
-
-        {/* bottom line */}
-        <div style={{
-          marginTop: 80, height: 1,
-          background: "#0f0f0f",
-          opacity: inView ? 1 : 0,
-          transition: "opacity 1s 0.4s ease",
-        }} />
-        <div style={{
-          marginTop: 32,
-          fontFamily: "var(--mono)", fontSize: 10, color: "#1a1a1a",
-          letterSpacing: "0.2em", textTransform: "uppercase",
-          opacity: inView ? 1 : 0,
-          transition: "opacity 1s 0.5s ease",
-        }}>
-          © 2025 DEVIQUE · ALL RIGHTS RESERVED
         </div>
       </div>
     </Section>

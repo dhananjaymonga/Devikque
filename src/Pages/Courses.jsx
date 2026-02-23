@@ -235,9 +235,6 @@ function useInView(ref, threshold = 0.1) {
   return inView;
 }
 
-const LEVELS = ["All", "Beginner", "Intermediate", "Advanced"];
-const TAGS   = ["All", "Python", "JavaScript", "Rust", "React", "Go", "DevOps"];
-
 /* ============================================================
    COURSE CARD
    ============================================================ */
@@ -299,7 +296,7 @@ function CourseCard({ course, onClick, idx }) {
               background: "#0f0f0f", color: "var(--muted2)",
               border: "1px solid #1a1a1a",
             }}>
-              {course.level}
+              {course.level} 
             </div>
           </div>
 
@@ -346,7 +343,7 @@ function CourseCard({ course, onClick, idx }) {
 
         {/* Desc */}
         <p style={{
-          fontFamily: "var(--sans)", fontSize: 13, color: "#444",
+          fontFamily: "var(--sans)", fontSize: 13, color: "#999",
           lineHeight: 1.75, fontWeight: 300, marginBottom: 18,
           letterSpacing: "0.02em",
         }}>
@@ -442,19 +439,6 @@ function CourseCard({ course, onClick, idx }) {
    COURSES PAGE
    ============================================================ */
 export function CoursesPage({ onSelectCourse }) {
-  const [filter, setFilter] = useState("All");
-  const [levelFilter, setLevelFilter] = useState("All");
-  const [search, setSearch] = useState("");
-  const [searchFocus, setSearchFocus] = useState(false);
-
-  const filtered = COURSES.filter(c => {
-    const matchTag   = filter === "All" || c.tag === filter;
-    const matchLevel = levelFilter === "All" || c.level === levelFilter;
-    const matchSearch = search === "" ||
-      c.title.toLowerCase().includes(search.toLowerCase()) ||
-      c.tag.toLowerCase().includes(search.toLowerCase());
-    return matchTag && matchLevel && matchSearch;
-  });
 
   return (
     <div style={{
@@ -514,7 +498,7 @@ export function CoursesPage({ onSelectCourse }) {
           </h1>
 
           <p style={{
-            fontFamily: "var(--mono)", fontSize: 14, color: "#444",
+            fontFamily: "var(--mono)", fontSize: 14, color: "#666",
             lineHeight: 1.8, maxWidth: 520, margin: "0 auto 40px",
             animation: "fadeUp 0.5s 0.2s ease both",
           }}>
@@ -546,85 +530,9 @@ export function CoursesPage({ onSelectCourse }) {
           </div>
         </div>
 
-        {/* ── FILTERS ── */}
-        <div style={{
-          padding: "24px 48px",
-          borderBottom: "1px solid #111",
-          display: "flex", gap: 16, alignItems: "center",
-          flexWrap: "wrap", background: "#030303",
-          position: "sticky", top: 0, zIndex: 50,
-          backdropFilter: "blur(20px)",
-        }}>
-          {/* Search */}
-          <div style={{
-            position: "relative", flex: 1, minWidth: 200, maxWidth: 320,
-          }}>
-            <span style={{
-              position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)",
-              fontFamily: "var(--mono)", fontSize: 11, color: "#333",
-            }}>$</span>
-            <input
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              onFocus={() => setSearchFocus(true)}
-              onBlur={() => setSearchFocus(false)}
-              placeholder="search courses..."
-              style={{
-                width: "100%", padding: "9px 12px 9px 28px",
-                background: "#080808",
-                border: `1px solid ${searchFocus ? "#00ff8840" : "#1a1a1a"}`,
-                borderRadius: 6, color: "var(--text)",
-                fontFamily: "var(--mono)", fontSize: 11,
-                outline: "none", letterSpacing: "0.05em",
-                transition: "border-color 0.2s",
-                caretColor: "#00ff88",
-              }}
-            />
-          </div>
-
-          {/* Tag filters */}
-          <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-            {TAGS.map(t => (
-              <button key={t} onClick={() => setFilter(t)} style={{
-                padding: "7px 16px", borderRadius: 5,
-                background: filter === t ? "#00ff8815" : "transparent",
-                border: `1px solid ${filter === t ? "#00ff8840" : "#1a1a1a"}`,
-                color: filter === t ? "#00ff88" : "#333",
-                fontFamily: "var(--mono)", fontSize: 10, cursor: "pointer",
-                letterSpacing: "0.1em", transition: "all 0.2s",
-              }}>
-                {t}
-              </button>
-            ))}
-          </div>
-
-          {/* Level filters */}
-          <div style={{ display: "flex", gap: 4 }}>
-            {LEVELS.map(l => (
-              <button key={l} onClick={() => setLevelFilter(l)} style={{
-                padding: "7px 14px", borderRadius: 5,
-                background: levelFilter === l ? "#a855f715" : "transparent",
-                border: `1px solid ${levelFilter === l ? "#a855f740" : "#1a1a1a"}`,
-                color: levelFilter === l ? "#a855f7" : "#333",
-                fontFamily: "var(--mono)", fontSize: 10, cursor: "pointer",
-                letterSpacing: "0.1em", transition: "all 0.2s",
-              }}>
-                {l}
-              </button>
-            ))}
-          </div>
-
-          <div style={{
-            marginLeft: "auto", fontFamily: "var(--mono)", fontSize: 10,
-            color: "#222", letterSpacing: "0.1em",
-          }}>
-            {filtered.length} RESULTS
-          </div>
-        </div>
-
         {/* ── GRID ── */}
         <div style={{ padding: "48px 48px 80px" }}>
-          {filtered.length === 0 ? (
+          {COURSES.length === 0 ? (
             <div style={{
               textAlign: "center", padding: "80px 0",
               fontFamily: "var(--mono)", color: "#1a1a1a",
@@ -638,7 +546,7 @@ export function CoursesPage({ onSelectCourse }) {
               gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
               gap: 24,
             }}>
-              {filtered.map((c, i) => (
+              {COURSES.map((c, i) => (
                 <CourseCard key={c.id} course={c} onClick={onSelectCourse} idx={i} />
               ))}
             </div>
@@ -694,7 +602,7 @@ export function CourseDetailsPage({ course, onBack }) {
           backdropFilter: "blur(20px)",
         }}>
           <button onClick={onBack} style={{
-            fontFamily: "var(--mono)", fontSize: 11, color: "#333",
+            fontFamily: "var(--mono)", fontSize: 11, color: "#888",
             background: "transparent", border: "1px solid #1a1a1a",
             borderRadius: 5, padding: "6px 14px", cursor: "pointer",
             letterSpacing: "0.12em", transition: "all 0.2s",
@@ -793,7 +701,7 @@ export function CourseDetailsPage({ course, onBack }) {
               </div>
 
               <p style={{
-                fontFamily: "var(--sans)", fontSize: 15, color: "#555",
+                fontFamily: "var(--sans)", fontSize: 15, color: "#888",
                 lineHeight: 1.85, fontWeight: 300, marginBottom: 32,
                 letterSpacing: "0.02em", maxWidth: 600,
               }}>
@@ -889,7 +797,7 @@ export function CourseDetailsPage({ course, onBack }) {
 
                   <button style={{
                     width: "100%", padding: "13px",
-                    background: "transparent", color: "#333",
+                    background: "transparent", color: "#888",
                     border: "1px solid #1a1a1a", borderRadius: 8,
                     fontFamily: "var(--sans)", fontSize: 13, fontWeight: 600,
                     letterSpacing: "0.12em", textTransform: "uppercase",
@@ -922,7 +830,7 @@ export function CourseDetailsPage({ course, onBack }) {
                       <div key={item} style={{
                         display: "flex", alignItems: "center", gap: 10,
                         marginBottom: 10, fontFamily: "var(--mono)",
-                        fontSize: 11, color: "#444", letterSpacing: "0.04em",
+                        fontSize: 11, color: "#888", letterSpacing: "0.04em",
                       }}>
                         <span style={{ color: course.tagColor, fontSize: 12 }}>✓</span>
                         {item}
@@ -990,7 +898,7 @@ export function CourseDetailsPage({ course, onBack }) {
                     padding: "14px 16px",
                     background: "#070707", border: "1px solid #141414",
                     borderRadius: 8, fontFamily: "var(--sans)",
-                    fontSize: 13, color: "#555", lineHeight: 1.6,
+                    fontSize: 13, color: "#888", lineHeight: 1.6,
                     fontWeight: 300, letterSpacing: "0.02em",
                   }}>
                     <span style={{ color: course.tagColor, marginTop: 1, flexShrink: 0 }}>→</span>

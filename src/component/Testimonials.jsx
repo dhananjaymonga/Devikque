@@ -120,7 +120,7 @@ function TCard({ t }) {
       </div>
 
       <p style={{
-        fontSize: 14, lineHeight: 1.85, color: "#555",
+        fontSize: 14, lineHeight: 1.85, color: "var(--text)",
         fontWeight: 300, letterSpacing: "0.02em", marginBottom: 24,
         fontFamily: "var(--display)",
       }}>
